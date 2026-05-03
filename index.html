@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Catcher — Learn English!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-layer">
+            <div id="top-bar" class="hidden">
+                <div class="stat-box">⭐ <span id="score-display">0</span></div>
+                <div class="target-category">🎯 <span id="category-display">Animals</span> <span id="round-timer" class="cat-timer">30</span></div>
+                <div class="stat-box">📋 R<span id="round-display">1</span>/4</div>
+            </div>
+            <div id="player-badge" class="hidden">👤 <span id="player-name-badge"></span></div>
+
+            <!-- Start Screen -->
+            <div id="start-screen">
+                <div class="screen-content">
+                    <h1>🎓 Word Catcher</h1>
+                    <p>Catch words that match the category!<br>Avoid the wrong ones!</p>
+                    <div class="name-input-container">
+                        <label for="player-name-input">Enter your name:</label>
+                        <input type="text" id="player-name-input" placeholder="Your name..." maxlength="15" autocomplete="off">
+                    </div>
+                    <div class="instructions">⬅️ ➡️ Move &nbsp;|&nbsp; Space ⬆️ Jump</div>
+                    <button id="start-btn">▶ Start Game</button>
+                </div>
+            </div>
+
+            <!-- Round Intro -->
+            <div id="round-intro-screen" class="hidden">
+                <div class="screen-content round-intro-content">
+                    <div class="round-badge" id="round-badge">Round 1</div>
+                    <h1 id="round-category-title">🐾 Animals</h1>
+                    <p class="round-words" id="round-word-preview">Dog, Cat, Lion, Tiger, Bear...</p>
+                    <p class="round-ready">Get Ready! 🚀</p>
+                </div>
+            </div>
+
+            <!-- Game Over -->
+            <div id="game-over-screen" class="hidden">
+                <div class="screen-content">
+                    <h1>🏁 Game Over!</h1>
+                    <p id="player-final-name"></p>
+                    <div class="stats-container">
+                        <div class="stat-card correct-card"><span class="stat-icon">✅</span><span class="stat-label">Correct</span><span class="stat-value" id="correct-count">0</span></div>
+                        <div class="stat-card wrong-card"><span class="stat-icon">❌</span><span class="stat-label">Wrong</span><span class="stat-value" id="wrong-count">0</span></div>
+                        <div class="stat-card score-card"><span class="stat-icon">⭐</span><span class="stat-label">Score</span><span class="stat-value" id="final-score">0</span></div>
+                    </div>
+                    <button id="restart-btn">🔄 Play Again</button>
+                </div>
+            </div>
+
+            <div id="feedback-message" class="feedback-msg hidden"></div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
